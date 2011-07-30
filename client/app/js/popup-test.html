@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Test popus</title>
+	<script type="text/javascript" src="jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="jquery.closure.js"></script>
+	<script type="text/javascript" src="jquery.htmlbuffer.js"></script>
+	<script type="text/javascript" src="popups.js"></script>
+	<style>
+		#pw-popup {
+			position : absolute;
+			top: 50px;
+			left: 50px;
+			z-index : 999;
+			background: #fff;
+			padding : 10px;
+			box-shadow: 1px 1px 3px #333;
+			-moz-box-shadow: 1px 1px 3px #333;
+			-webkit-box-shadow: 1px 1px 3px #333;
+			-khtml-box-shadow: 1px 1px 3px #333;
+			
+			border-radius: 8px;
+			-moz-border-radius: 8px;
+			-webkit-border-radius: 8px;
+			-khtml-border-radius: 8px;
+			border: 1px solid silver;
+		}
+		#pw-popup-buttons {
+			display: block;
+			text-align : center;
+		}
+	</style>
+</head>
+<body>
+<a href="clickme" onclick="new pw.Popup().alert('Alert', 'Hello World', function(answer){alert(answer)}); return false;">Alert</a><br/><br/>
+
+<a href="clickme" onclick="new pw.Popup().confirm('Ae you sure?', 'be careful now', function(answer){alert(answer)}); return false;">Confirm</a><br/><br/>
+
+<a href="clickme" onclick="new pw.Popup().prompt('So tell me', 'How\'s it going', function(answer){alert(answer)}); return false;">Prompt</a><br/><br/>
+
+<a href="clickme" onclick="new pw.Popup().login('Got cred?', 'Come on in', function(username, password){alert(username + ' - ' + password)}); return false;">Login</a><br/><br/>
+</body>
+
+</html>
+

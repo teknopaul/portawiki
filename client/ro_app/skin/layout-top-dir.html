@@ -1,0 +1,25 @@
+<div id="container">
+	<div id="header">
+		<span class="title"><!--#echo var="serverName" --></span> 
+		<span class="m3-auth-status"></span>
+	</div>
+	<div id="content">
+		<div id="menu">
+			<!-- main menu -->
+			<ul>
+				<li><a class="help-link" href="/view/">
+					<span class="tooltip">
+					Wiki root page.
+					</span>
+					Home</a>
+				</li>
+			</ul>
+		</div>
+		<script>
+			jQuery(pw.bindMenu);
+		</script>
+		<div id="main">
+		<script>
+			document.write(pw.breadcrumbTrailHtml(document.location.pathname));
+		</script>
+		

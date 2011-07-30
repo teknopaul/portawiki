@@ -1,0 +1,42 @@
+<html id="pw-page">
+
+<head>
+
+<title>Example Page</title>
+<!--#include virtual="/app/inc.html" -->
+</head>
+
+<body>
+
+<div id="pw-metadata">
+
+  <div class="pw-created">teknopaul                   <span class="pw-date">2011-06-03 15:23:34 CEST</span></div>
+  <div class="pw-edited">teknopaul                    <span class="pw-date">2011-06-04 15:28:33 CEST</span></div>
+  <div class="pw-edited">abdul                        <span class="pw-date">2011-06-04 21:22:53 CEST</span></div>
+  <div class="pw-edited">tiago                        <span class="pw-date">2011-06-04 21:25:22 CEST</span></div>
+  <div class="pw-edited">abdul                        <span class="pw-date">2011-06-05 23:23:11 CEST</span></div>
+
+</div><!--pw-metadata-->
+
+<!--#include virtual="/app/skin/layout-top.html" -->
+
+<div id="pw-title">Example Page</div>
+
+<div id="pw-content">
+Firstline <br/>
+
+The should be pretty much free form HTML where the user content goes including basic HTML tags like <b>bold</b>
+
+<li>bullets</li>
+<li>bullets</li>
+<li>bullets</li>
+<a href="../../Hardware/Other_Page.html">Other Page</a>
+
+lastline
+</div><!--pw-content-->
+
+<!--#include virtual="/app/skin/layout-bottom.html" -->
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<html id="pw-page">
+
+<head>
+
+<title>index</title>
+<!--#include virtual="/app/inc.html" -->
+</head>
+
+<body id="pw-body">
+
+<div id="pw-metadata">
+
+<div class="pw-created">system;<span class="pw-date">Fri Jul 15 2011 21:39:46 GMT+0200 (CEST)</span></div>
+
+</div><!--pw-metadata-->
+
+<!--#include virtual="/app/skin/layout-top-file.html" -->
+
+<div id="pw-title">index</div>
+
+<div id="pw-content">
+Sections are simply folders/directories of files, a bread crumb trail is created to navigate.
+
+</div><!--pw-content-->
+
+<!--#include virtual="/app/skin/layout-bottom.html" -->
+
+</body>
+
+</html>
+

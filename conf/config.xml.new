@@ -1,0 +1,34 @@
+<config>
+	<!-- 
+		The port on which the HTTP server listens.
+	-->
+	<port>8000</port>
+	<!-- 
+		Base directory for the user generated wiki files. 
+	-->
+	<basedir>../portawiki</basedir>
+
+	<!-- 
+		Base directory for the JavaScript files used by the GUI frontend of the wiki.
+	-->
+	<appjsdir>../client/app</appjsdir>
+
+	<!-- 
+		Base directory for server side files that are not necessarily published in the wiki.
+		Accessed by the rest API. 
+	-->
+	<datadir>../data</datadir>
+	
+	<!-- 
+		module to validate username and password
+	 -->
+	<authorizer>xml</authorizer>
+	<!-- 
+		Secret key for M3 authentication.
+	 -->
+	<key>W07$1zN4m3</key>
+	<!-- 
+	    With debug set node dies if an exception is thrown in the event loop
+	 -->
+	<debug>true</debug>
+</config>

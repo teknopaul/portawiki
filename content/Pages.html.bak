@@ -1,0 +1,44 @@
+<html id="pw-page">
+
+<head>
+
+<title>Pages</title>
+<!--#include virtual="/app/inc.html" -->
+</head>
+
+<body id="pw-body">
+
+<div id="pw-metadata">
+
+<span>
+<div class="pw-created">null<span class="pw-date">Invalid Date</span></div>
+<div class="pw-edited">system<span class="pw-date">Sat Jul 30 2011 17:31:19 GMT+0200 (CEST)</span></div>
+<div class="pw-edited">system<span class="pw-date">Sat Jul 30 2011 17:32:23 GMT+0200 (CEST)</span></div>
+<div class="pw-edited">system<span class="pw-date">Sat Jul 30 2011 17:38:20 GMT+0200 (CEST)</span></div>
+<div class="pw-edited">system<span class="pw-date">Sat Jul 30 2011 17:45:56 GMT+0200 (CEST)</span></div>
+<div class="pw-edited">system<span class="pw-date">Sat Jul 30 2011 17:46:09 GMT+0200 (CEST)</span></div>
+</span>
+
+
+</div><!--pw-metadata-->
+
+<!--#include virtual="/app/skin/layout-top-file.html" -->
+
+<div id="pw-title">Pages</div>
+
+<div id="pw-content">
+<p>Click "new Page" from the menu to create a new HTML page, page titles can only include letters and spaces.</p>
+<p>&nbsp;</p>
+<p>After createing the page click refresh if you dont see it in the directory listing (ToC) when you view the page there is a link to edit the page in the menu.</p>
+<p>&nbsp;</p>
+<p>If the title of the page is <span class="pw-title">index</span> (lower case) it will be used if the user navigates to the directory.</p>
+<p>&nbsp;</p>
+<p>Editing page titles has not been implemented yet, so go fiddle with the HTML on disk for refactoring pages.</p>
+</div><!--pw-content-->
+
+<!--#include virtual="/app/skin/layout-bottom.html" -->
+
+</body>
+
+</html>
+
