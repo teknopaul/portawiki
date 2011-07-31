@@ -23,9 +23,6 @@ var pwUtil = 		require('../util/util.js');
  */
 function doGet(request, response, url) {
 	
-	// TODO username from session
-	var user = "system";
-	
 	var pageName = url.pathname.substring("/view".length);
 	
 	try {
@@ -37,8 +34,6 @@ function doGet(request, response, url) {
 		} else {
 			title = "root";
 		}
-		
-		console.dir(url);
 		
 		if (url.search == '?view=toc') {
 			directoryListing(pageName, title, response);
@@ -68,8 +63,10 @@ function doGet(request, response, url) {
 };
 
 directoryListing = function(pageName, title, response) {
+	
 	// create a directory listing
 	var tc = new toc.ToC(pageName);
+	
 	tc.getHtml( function(tocHtml) {
 		
 		var instream  = fs.createReadStream('./resources/template-dir.html', { flags: 'r', encoding: 'utf8', start: 0 });
@@ -88,6 +85,7 @@ directoryListing = function(pageName, title, response) {
 			inoutpipe.end();
 		});
 	});
+	
 };
 
 exports.doGet = doGet;

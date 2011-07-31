@@ -49,6 +49,9 @@ font-weight:normal;
 text-decoration:none;
 font-size:14px
 }
+samp {
+font-size:12px
+}
 hr{
 border:1px grey etched;
 background: silver;
@@ -393,7 +396,7 @@ div#pw-content samp {
 	text-align: right;
 }
 #pw-popup {
-	width: 400px;
+	width: 420px;
 }
 #pw-popup input#pw-popup-answer {
 	padding: 5px;
@@ -404,6 +407,10 @@ div#pw-content samp {
 	margin-top: 15px;
 	display: block;
 	text-align : center;
+}
+
+#pw-popup br {
+	clear:both;
 }
 #pw-title {
 	font-size: 20px;

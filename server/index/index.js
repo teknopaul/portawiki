@@ -8,6 +8,9 @@ var fs = require('fs');
  */
 
 
+/**
+ * Constructor
+ */
 UniqueIndex = function(resolver, dir, key) {
 	this.resolver = resolver;
 	this.dir = dir;
@@ -16,7 +19,7 @@ UniqueIndex = function(resolver, dir, key) {
 };
 
 /**
- * adds a mapping to the index where key points to pathname.
+ * Adds a mapping to the index where key points to pathname.
  */
 UniqueIndex.prototype.addKey(pathname, key) {
 	this.theIndex[key] = pathname;

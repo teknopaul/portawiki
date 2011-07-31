@@ -5,22 +5,23 @@ var defaults = 	require('./default');
 var resolve = 	require('../persistence/file-resolve');
 var config = 	require('../util/config.js').configData;
 var pageNameValidator = require('../../client/app/js/page-name-validator');
+
+
 /**
  * This is a simple JSON REST service that allows reading and writing using AJAX requests.
  * 
  * The path must have a context root of /data/, but after that any path is valid, and any item name follows the same rules as page names.
  * 
  * e.g.  POST /data/user/Teknopaul  with overwrite the data in a file called Teknopaul.json provided the JSON supplied 
- * complies to the template /data/user/dir.template.json  (dir.tempalte is used as a filename since . is not permitted in a page name)   
+ * complies to the template /data/user/dir.template.json  (dir.template is used as a filename since . is not permitted in a page name)   
  * 
  * The only methods supported are GET and POST and it up to the front end to do something sensible with the data.
  * 
- * For security this system only allows structured
- * JSON objects to be stored.  Since we don't have the luxury of XSDs in JSON the system uses a simple templating system.
+ * Since we don't have the luxury of XSDs in JSON the system uses a simple templating system.
  * 
- * A tempalte is a file called /foo/bar/dir.template.json
+ * A template is a file called /data/user/dir.template.json
  * When saving the data, only the attributes from the JSON that match the attributes in the template will be stored.
- * The name and datatype must match,  only data types boolean string and number are supported.
+ * The name and datatype must match, only data types boolean string and number are supported.
  * 
  * e.g. template
  * 
@@ -30,6 +31,7 @@ var pageNameValidator = require('../../client/app/js/page-name-validator');
  *   isDev : true
  * }
  * 
+ * if the template contains just {freeform:true} templating is disabled, and any JSON is permitted.
  */
 
 
@@ -148,7 +150,13 @@ doPost = function(request, response, url) {
  * @return a copy of input, but only copying the attributes that match in name and datatype in the template
  */
 copyBean = function(template, input) {
+	
+	if (template.freeform) {
+		return input;
+	}
+	
 	var copy = {};
+	
 	for(attr in template) {
 		
 		var value = input[attr];
@@ -170,7 +178,9 @@ copyBean = function(template, input) {
 			console.log('object not supported ' + value);
 		}
 	}
+	
 	return copy;
+	
 };
 
 /**
