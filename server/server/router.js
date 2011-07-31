@@ -16,11 +16,9 @@ var faviconModule =		require('../http_mods/favicon');
 var newModule =			require('../http_mods/new');
 var newCategoryModule =	require('../http_mods/new-category');
 var saveModule = 		require('../http_mods/save');
-var sessionModule = 		require('../http_mods/session');
+var sessionModule = 	require('../http_mods/session');
 var restModule = 		require('../http_mods/rest'); // TODO
-//var attachsModule = require('../http_mods/attach');
-//var loginModule = 		require('../http_mods/login');
-//var logoutModule = 		require('../http_mods/logout');
+var uploadModule = 		require('../http_mods/upload');
 
 /**
  * Router routes requests to the correct module.
@@ -68,8 +66,8 @@ route = function(request, response, chain) {
 		else if (url.pathname.indexOf('/new-category/') == 0) {
 			service(newCategoryModule, request, response, url);
 		}
-		else if (url.pathname.indexOf('/attach/') == 0) {
-			//service(attachModule, request, response, url);
+		else if (url.pathname.indexOf('/upload/') == 0) {
+			service(uploadModule, request, response, url);
 		}
 		else if (request.method == 'GET') {
 			defaults.fileNotFound(response);

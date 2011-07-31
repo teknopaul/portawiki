@@ -3,8 +3,6 @@
  * Set the authorizer to a module relative to this module that handles validating
  * username and password.
  *  
- *  TODO XML based.
- *  
  */
 var config = require('../util/config');
 
@@ -13,8 +11,8 @@ var xml = require('./xml-authorizer').authorize;
 var pam = require('./pam-authorizer').authorize;
 
 var selector = hardcoded;
-swappable = function(username, password) {
-	return selector(username, password);
+swappable = function(username, password, cb) {
+	return selector(username, password, cb);
 };
 
 

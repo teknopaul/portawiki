@@ -11,10 +11,18 @@ var popup = new pw.Popup();
 pw.Menu = new Object();
 
 pw.Menu.edit = function() {
-	document.location.href = '/app/edit.html?pageName=' + pw.getPageName();
+	if (document.cookie.indexOf("M3") == -1) {
+		popup.alert("Authentication required", "Login to edit pages");
+	} else {
+		document.location.href = '/app/edit.html?pageName=' + pw.getPageName();
+	}
 };
 
 pw.Menu.newPage = function() {
+	if (document.cookie.indexOf("M3") == -1) {
+		popup.alert("Authentication required", "Login to edit pages");
+		return;
+	}
 	popup.prompt("New Page" , "Enter the new page's name (just characters and spaces)", function(title){
 		try {
 			title = pw.validatePageName(title);
@@ -39,6 +47,10 @@ pw.Menu.newPage = function() {
 };
 
 pw.Menu.newCategory = function() {
+	if (document.cookie.indexOf("M3") == -1) {
+		popup.alert("Authentication required", "Login to edit pages");
+		return;
+	}
 	popup.prompt("New Category", "Enter the new category's name (just characters and spaces)", function(title) {
 		try {
 			title = pw.validatePageName(title);
@@ -63,6 +75,23 @@ pw.Menu.newCategory = function() {
 	});
 };
 
+pw.Menu.upload = function() {
+	if (document.cookie.indexOf("M3") == -1) {
+		popup.alert("Authentication required", "Login to edit pages");
+		return;
+	}
+	var dialog = new pw.Popup();
+	
+	var dirName = pw.dirname(document.location.pathname.substring("/view".length));
+	
+	var html = new $.htmlBuffer();
+	html.html('<h3>Upload</h3><iframe id="pw-upload-frame" src="/app/upload.html?basedir=')
+		.text(dirName)
+		.html('" style="width:500px"/><button id="pw-close">Close</button>');
+	dialog.popup(html.toString());
+	jQuery("#pw-close").click($.callback(dialog, dialog.dispose));
+};
+
 pw.Menu.history = function() {
 	var showing = jQuery("div.pw-metadata");
 	if ( showing.length == 0 ) {
@@ -84,6 +113,7 @@ pw.bindMenu = function() {
 	jQuery("#pw-new").click(pw.Menu.newPage);
 	jQuery("#pw-new-category").click(pw.Menu.newCategory);
 	jQuery("#pw-history").click(pw.Menu.history);
+	jQuery("#pw-upload").click(pw.Menu.upload);
 };
 
 pw.bindLogin = function() {

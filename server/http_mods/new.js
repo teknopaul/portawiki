@@ -21,8 +21,12 @@ function doPost(request, response, url) {
 		return;
 	}
 	
-	// TODO username from session
-	var user = "system;"
+	if ( ! request.authenticated ) {
+		defaults.forbidden(response);
+		return;
+	}
+
+	var user = request.session.cookieModel.data[0];
 	
 	var pageName = url.query.pageName;
 	

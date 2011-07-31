@@ -39,9 +39,9 @@ instream.on('end', function() {
 	});
 });
 
-authorize = function(user , pass) {
+authorize = function(user, pass, cb) {
 	var password = users[user];
-	return pass == password;
+	cb(pass == password);
 };
 
 exports.authorize = authorize;

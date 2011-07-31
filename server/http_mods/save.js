@@ -20,8 +20,12 @@ var replaceParser = require('../util/replace-parser.js');
  */
 function doPost(request, response, url) {
 	
-	// TODO username from session
-	var user = "system";
+	if ( ! request.authenticated ) {
+		defaults.forbidden(response);
+		return;
+	}
+
+	var user = request.session.cookieModel.data[0];
 	
 	var buffer = '';
 	var pageName = url.pathname.substring("/save".length, url.pathname.length - 5);// strip .html

@@ -97,6 +97,12 @@ function badRequest(response) {
 	response.end();
 };
 
+function forbidden(response) {
+	response.writeHead(403, "FORBIDDEN", {'Content-Length': 0,
+										 	'Content-Type': 'text/plain' });
+	response.end();
+};
+
 function found(response, location) {
 	response.writeHead(302, "FOUND", {'Content-Length': 0,
 										'Location': location });
@@ -112,6 +118,7 @@ exports.fileNotFound = fileNotFound;
 exports.serverError = serverError;
 exports.badRequest = badRequest;
 exports.found = found;
+exports.forbidden = forbidden;
 
 /*
 mock = new Object();

@@ -40,9 +40,8 @@ doGet = function(request, response, url) {
 	var respObject = { m3_string : null };
 	
 	if (url.pathname.indexOf("/session/checkSecure")) {
-		if ( request.session && 
-				request.session.cookieModel && 
-				request.session.cookieModel.authenticated ) {
+		if ( request.authenticated &&
+			 request.session.cookieModel.authenticated ) {
 			respObject = M3_OK;
 		}
 		else {
@@ -51,10 +50,8 @@ doGet = function(request, response, url) {
 	}
 	else if (url.pathname.indexOf("/session/check")) {
 		var name = "";
-		if ( request.session && 
-				request.session.cookieModel && 
-				request.session.cookieModel.authenticated ) {
-			name = request.session.cookieModel.data[0].arguments;
+		if ( request.authenticated ) {
+			name = request.session.cookieModel.data[0];
 			respObject.m3_string = name;
 		}
 		else {
@@ -82,19 +79,21 @@ doPost = function(request, response, url) {
 		request.on('end', function() {
 			
 			var tokens = parseQueryString(buffer);
-			if ( authorize(tokens.username, tokens.password) ) {
-				var cm = new m3auth.CookieModel();
-				cm.athenticated = true;
-				cm.data.push(tokens.username);
-				
-				var cookie = secureCookieData(config.key, cm);
-				response.setHeader('Set-Cookie', 'M3=' + cookie + ";path=/");
-				sendJson(response, M3_OK);
-			}
-			else {
-				response.setHeader('Set-Cookie', 'M3=');
-				sendJson(response, AUTH_FAILED);
-			}
+			authorize(tokens.username, tokens.password, function(ok) {
+			 	if (ok) {
+					var cm = new m3auth.CookieModel();
+					cm.athenticated = true;
+					cm.data.push(tokens.username);
+					
+					var cookie = secureCookieData(config.key, cm);
+					response.setHeader('Set-Cookie', 'M3=' + cookie + ";path=/");
+					sendJson(response, M3_OK);
+				}
+				else {
+					response.setHeader('Set-Cookie', 'M3=');
+					sendJson(response, AUTH_FAILED);
+				}
+			});
 			
 		});
 	}

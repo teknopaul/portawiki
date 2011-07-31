@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Upload</title>
+	<link rel="stylesheet" type="text/css" href="/app/skin/style.css" >
+	<script type="text/javascript" src="/app/js/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="/app/js/uploader.js"></script>
+</head>
+<body id="pw-upload-page" style="margin:10px"">
+	<form id="pw-upload-form" method="post" action="/upload/" enctype="multipart/form-data">
+	<input name="dir0" type="hidden"></input>
+	<input name="file0" type="file" id="pw-file-upload-field"></input><br/>
+	<input name="fileName0" type="text"></input> . <input name="fileExt0" type="text" size="4"></input><br/><br/>
+	<input type="submit" name="submit" value="Upload"></input>
+	</form>
+	<script type="text/javascript">
+		jQuery("#pw-file-upload-field").change(function(e){
+			var form = jQuery("#pw-upload-form");
+			var elem = jQuery("#pw-file-upload-field");
+			var fileName = elem.val();
+			if (fileName.indexOf('.') > -1) {
+				var name = fileName.substring(0, fileName.indexOf('.'));
+				var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+			}
+			else {
+				var name = fileName.substring(0, fileName.indexOf('.'));
+				var ext = 'dat';
+			}
+			form[0].elements['fileName0'].value = name;
+			form[0].elements['fileExt0'].value = ext;
+		});
+
+		var href = window.location.search;
+		var paramValue = href.split('?')[1].split('=');
+		if (paramValue[0] == 'basedir') {
+			var basedir = paramValue[1];
+			var thisform = jQuery('#pw-upload-form')[0]
+			thisform.elements['dir0'].value = basedir;
+		}
+		
+	</script>
+</body>
+</html>

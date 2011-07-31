@@ -413,3 +413,7 @@ div#pw-content samp {
 	text-shadow: 2px 2px 2px #ddd;
 	border-bottom: 1px dotted #eee;
 }
+#pw-close {
+	float: right;
+	margin: 10px;
+}

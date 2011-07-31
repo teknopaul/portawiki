@@ -8,7 +8,8 @@ var m3auth = require("../auth/m3-auth.js");
  */
 filter = function(request, response, chain) {
 	
-	if (request.attributes.url.pathname.indexOf("/app/") != 0) {
+	if (request.attributes.url.pathname.indexOf("/app/") != 0 &&
+		request.attributes.url.pathname.indexOf("/view/") != 0 ) {
 		try {
 			var cookie = util.parseCookie(request.headers.cookie);
 			if (cookie.m3) {
@@ -16,10 +17,12 @@ filter = function(request, response, chain) {
 				request.session = {
 						cookieModel : cookieModel
 				};
-				console.log("authenticated:" + cookieModel.data[0]);
+				request.authenticated = true;
+				//console.log("authenticated:" + cookieModel.data[0]);
 			}	
 		} catch(err) {
-			console.log("Auth error " + err);
+			// Not logged in
+			//console.log("Auth error " + err);
 		}
 	}
 	

@@ -17,6 +17,11 @@ function doPost(request, response, url) {
 		defaults.badRequest(response);
 		return;
 	}
+	
+	if ( ! request.authenticated ) {
+		defaults.forbidden(response);
+		return;
+	}
 
 	try {
 		var path = url.query.path;
