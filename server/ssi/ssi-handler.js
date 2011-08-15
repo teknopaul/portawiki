@@ -21,6 +21,7 @@ SsiHandler = function(ssiEnv, resolver) {
 	this.ssiEnv = ssiEnv; // SSI environment,  name value pairs
 	this.resolver = resolver || resolve;
 
+	// this assumes default file is read, it is up to the client to wait for ssiEnvironment.on('envReady')
 	if (typeof ssiEnv == 'undefined') this.ssiEnv = ssiEnvironment.env;
 
 	/**

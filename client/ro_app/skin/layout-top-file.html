@@ -13,10 +13,23 @@
 					</span>
 					Home</a>
 				</li>
+				<script>
+				document.write('<iframe src="http://www.facebook.com/plugins/like.php?href=');
+				document.write(encodeURI(document.URL));
+				document.write('&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>');
+				</script>
+				<div style="height:5px"></div>
+				<g:plusone size="small"></g:plusone>
 			</ul>
 		</div>
 		<script>
 			jQuery(pw.bindMenu);
+			// +1 
+			  (function() {
+				    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				    po.src = 'https://apis.google.com/js/plusone.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				  })();
 		</script>
 		<div id="main">
 		<script>

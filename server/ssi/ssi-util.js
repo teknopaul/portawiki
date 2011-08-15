@@ -3,7 +3,12 @@ var ssiParser = require('../ssi/ssi-parser');
 var ssi = require('../ssi/ssi-handler');
 
 /**
- * Utility methods for SSI.
+ * Utility method for SSI.
+ */
+
+/**
+ * Processes any SSI comments in the input stream and writes 
+ * the response to the output stream then calls end() on the stream.
  */
 processSsi = function(instream, response) {
 	

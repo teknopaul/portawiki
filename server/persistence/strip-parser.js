@@ -6,7 +6,7 @@ var BufferedStream = require('../util/buffered-stream').BufferedStream;
  * Reads the file with echo off until the first match then turns echo on
  * when the second match is found returns and sets finished to true to prevent future data events from being processed.
  * 
- * This is used by the edit module to return the user ewditable part of the HTML.
+ * This is used by the edit module to return the user editable part of the HTML.
  */
 Parser = function(name, instr, outstr) {
 	var self = this;

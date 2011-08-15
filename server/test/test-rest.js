@@ -2,21 +2,24 @@ var rest = require("../http_mods/rest.js");
 var conf = require("../util/config.js");
 var mocks = require("./mocks.js");
 
-console.log( rest.resolveTemplate("/home/teknopaul/node_workspace/node.js.sandbox/src/static/data", "users") );
+console.log( rest.resolveTemplate("../data", "users") );
 
 var template = {
 		bool : false,
 		string : "",
-		number : 1
+		number : 1,
+		array : []
 };
 
 var input = {
 		bool : true,
 		string : "data",
-		number : 2
+		number : 2,
+		array : ["one", "two", "three"]
 };
 
-console.dir(rest.copyBean(template, input));
+console.dir("copyBean: " +  rest.copyBean(template, input));
+console.dir("copyBean: " +  rest.copyBean(template, input));
 
 
 conf.emitter.on('configReady', function() {

@@ -1,7 +1,8 @@
 
 
 
-request = function(data) {
+request = function(data, url) {
+	this.url = url;
 	this.data = data;
 	this.on = function(evt, cb) {
 		if (evt == 'data') {

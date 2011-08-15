@@ -29,6 +29,8 @@ function doGet(request, response, url) {
 		var tc = new toc.ToC(pageName);
 		tc.getHtml( function(tocHtml) {
 			
+			response.setHeader("Content-Type", "text/html;charset=utf-8");
+			
 			// TODO caching and flushing
 			response.write(tocHtml);
 			response.end();
