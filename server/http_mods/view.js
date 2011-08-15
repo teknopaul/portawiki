@@ -27,9 +27,9 @@ function doGet(request, response, url) {
 		// open the file
 		var instream = null;
 		if ( defaults.mimeMagicIsText(url.pathname) ) {
-			instream = fs.createReadStream(fileSystemPath, { flags: 'r', encoding: 'utf8' });
+			instream = fs.createReadStream(fileSystemPath, { flags: 'r', encoding: 'utf8', start: 0 });
 		} else {
-			instream = fs.createReadStream(fileSystemPath);
+			instream = fs.createReadStream(fileSystemPath, { flags: 'r', start: 0}) ;
 		}
 		
 		//console.dir(instream);
