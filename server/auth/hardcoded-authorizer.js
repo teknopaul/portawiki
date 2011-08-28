@@ -6,5 +6,7 @@ exports.authorize = function(username, password, cb) {
 	if (username == 'admin'  && password == 'null') {
 		cb(true);
 	}
-	cb(false);
+	else {
+		cb(false);
+	}
 };

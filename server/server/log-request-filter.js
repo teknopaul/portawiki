@@ -2,7 +2,7 @@
 var parse = require('url').parse;
 
 /**
- *  "Servlet" filter for adding the default headers
+ *  filter logging the URL requested
  */
 
 filter = function(request, response, chain) {

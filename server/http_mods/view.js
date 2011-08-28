@@ -19,20 +19,33 @@ function doGet(request, response, url) {
 	resolve.resolve(pathname, true, function(fileSystemPath) {
 	
 		//console.log("Fetching file: " + fileSystemPath);
-		
-		// open the file
-		var instream = fs.createReadStream(fileSystemPath, { flags: 'r', encoding: 'utf8', start: 0	});
-		//console.dir(instream);
-		instream.on('error', function() {
-			console.log("Errror reading file in view module");
-		});
 
 		// set default HTTP headers
 		response.statusCode = 200;
 		var mime = defaults.mimeMagic(response, url.pathname);
+
+		// open the file
+		var instream = null;
+		if ( defaults.mimeMagicIsText(url.pathname) ) {
+			instream = fs.createReadStream(fileSystemPath, { flags: 'r', encoding: 'utf8', start: 0 });
+		} else {
+			instream = fs.createReadStream(fileSystemPath, { flags: 'r', start: 0}) ;
+		}
+		
+		//console.dir(instream);
+		instream.on('error', function() {
+			console.log("Errror reading file in view module " + url.pathname);
+			// TODO this is not correct FNF should be detected some other way
+			defaults.fileNotFound(response);
+			return;
+		});
+
 	
 		// If it is HTML parse SSI 
 		if (mime == "text/html") {
+			
+			response.setHeader("Content-Type", "text/html;charset=utf-8");
+			
 			// set up SSI
 			var handler = new ssi.SsiHandler();
 			var parser = new ssiParser.Parser("Http Server" , instream, response, handler);

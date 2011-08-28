@@ -6,7 +6,7 @@
 */
 
 var conf = require("../util/config");
-var ssiEnv = require("../ssi/ssi-environment")
+var ssiEnv = require("../ssi/ssi-environment");
 var EventEmitter = require('events').EventEmitter;
 
 
@@ -26,7 +26,8 @@ function init() {
 				console.log("Unhandled error : " + error);
 			});
 		}
-		ssiEnv.emitter.on('envReady', function() {
+		
+		ssiEnv.on('envReady', function() {
 			initialized = true;
 			emitter.emit('initialized');
 		});

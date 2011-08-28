@@ -89,7 +89,7 @@ validateCookieString = function(key, cookieString, timeout, timeCheck) {
 	if (ts + timeout < new Date().getTime()) {
 		if(timeCheck){
 			console.log("Users key expired " + new Date(ts));
-			throw "AuthFailedCondition (timeout)";
+			throw new Error("AuthFailedCondition (timeout)");
 		}
 	}
 			
@@ -116,7 +116,7 @@ validateCookieString = function(key, cookieString, timeout, timeCheck) {
 			return cookieModel;
 		}
 		
-		throw "AuthFailedCondition (mac)";
+		throw new Error("AuthFailedCondition (mac)");
 	}
 	catch (ex) {
 		throw ex;

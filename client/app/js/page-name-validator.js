@@ -22,60 +22,60 @@ pw.validatePageName = function(input, incSlash) {
 		var c = input.charAt(i);
 		var d = input.charCodeAt(i);
 		if (input.charCodeAt(i) < 32) {
-			throw "Control chars not permitted";
+			throw new Error("Control chars not permitted");
 		}
 		switch (c) {
 			case '/':
 				if (incSlash) {
-					throw c + pw.charNotAllowd;
+					throw new Error(c + pw.charNotAllowd);
 				}
 				else {
 					continue;
 				}
 			case '\\':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '.':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case ',':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case ':':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case ';':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '|':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '!':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '"':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '\'':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '#':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '$':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '%':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '&':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '=':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '?':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '*':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '~':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '<':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '>':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '[':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case ']':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 			case '^':
-				throw c + pw.charNotAllowd;
+				throw new Error(c + pw.charNotAllowd);
 		}
 	}
 	input = input.trim();
@@ -90,37 +90,3 @@ if(typeof exports != 'undefined') {
 	exports.validatePageName = pw.validatePageName;
 }
 
-/*
-console.log("name : '" + pw.validatePageName("Hello World", true) + "'");
-console.log("name : '" + pw.validatePageName("Hello_World", true) + "'");
-console.log("name : '" + pw.validatePageName(" Hello World ", true) + "'");
-console.log("name : '" + pw.validatePageName("Hello+World", true) + "'");
-console.log("name : '" + pw.validatePageName("Goodbye Cruel World", true) + "'");
-console.log("name : '" + pw.validatePageName("Hello World", true) + "'");
-console.log("name : '" + pw.validatePageName("Hello World", true) + "'");
-try  {
-	console.log("name : '" + pw.validatePageName("lets/../hack", true) + "'");
-}catch(err) {
-	console.log(err);
-}
-try  {
-	console.log("name : '" + pw.validatePageName("lets*", true) + "'");
-}catch(err) {
-	console.log(err);
-}
-try  {
-	console.log("name : '" + pw.validatePageName("lets.html", true) + "'");
-}catch(err) {
-	console.log(err);
-}
-try  {
-	console.log("name : '" + pw.validatePageName("/lets.html", false) + "'");
-}catch(err) {
-	console.log(err);
-}
-try  {
-	console.log("name : '" + pw.validatePageName("/lets.html", true) + "'");
-}catch(err) {
-	console.log(err);
-}
-*/

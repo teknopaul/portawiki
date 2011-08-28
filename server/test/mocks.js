@@ -1,7 +1,8 @@
 
 
 
-request = function(data) {
+request = function(data, url) {
+	this.url = url;
 	this.data = data;
 	this.on = function(evt, cb) {
 		if (evt == 'data') {
@@ -14,8 +15,12 @@ request = function(data) {
 };
 
 response = function() {
+	this.streamed = '';
 	this.setHeader = function(){};
-	this.write = function(data){
+	this.write = function(data) {
+		if (typeof data == 'string') {
+			this.streamed += data;
+		}
 		console.log(data);
 	};
 	this.writeHead = function(code){

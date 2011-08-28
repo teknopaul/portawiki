@@ -30,5 +30,5 @@
 	<!-- 
 	    With debug set node dies if an exception is thrown in the event loop
 	 -->
-	<debug>true</debug>
+	<debug>false</debug>
 </config>

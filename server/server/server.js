@@ -11,19 +11,26 @@ var attributesFilter = 	require("../server/attributes-filter"),
 	serverHeaderFilter = require("../server/server-header-filter"),
 	notModifiedFilter = require("../server/not-modified-filter"),
 	authenticationFilter = require("../server/authentication-filter"),
+	rewriteFilter = require("rewrite"),
 	routerFilter = 		require("../server/router");
 
+var rewriteRules = require("../../conf/rewrite-rules.js");
+
+	
 
 var chainModules = [
 	attributesFilter, 
 	logRequestFilter, 
 	serverHeaderFilter,
+	rewriteFilter,
 	notModifiedFilter,
 	authenticationFilter,
 	routerFilter
 ];
 
 var chain = new FilterChain(chainModules);
+
+rewriteFilter.setRules( rewriteRules );
 
 var startServer = function() {
 	/**

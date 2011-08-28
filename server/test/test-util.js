@@ -2,6 +2,11 @@
 
 var util = require('../util/util.js');
 
-console.log(util.removeDoubleSlash('/view//Software//index.html'));
-console.log(util.removeDoubleSlash('/'));
-console.log(util.removeDoubleSlash('/././'));
+exports.test = function(test) {
+	test.equals(util.removeDoubleSlash('/view//Software//index.html'), '/view/Software/index.html');
+	test.equals(util.removeDoubleSlash('/'), '/');
+	test.equals(util.removeDoubleSlash('/././') , '/././');
+	
+	test.done();
+};
+

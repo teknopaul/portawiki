@@ -17,7 +17,6 @@ var newModule =			require('../http_mods/new');
 var newCategoryModule =	require('../http_mods/new-category');
 var saveModule = 		require('../http_mods/save');
 var sessionModule = 	require('../http_mods/session');
-var restModule = 		require('../http_mods/rest'); // TODO
 var uploadModule = 		require('../http_mods/upload');
 
 /**
