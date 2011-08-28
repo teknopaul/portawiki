@@ -3,6 +3,12 @@ var BufferedStream = require('../util/buffered-stream').BufferedStream;
 
 /**
  * Parser to read a Stream and catch <!--# style SSI directives and pass to the SSI handler.
+ * 
+ * @constructor
+ * @param name a name for the parser to aid debugging
+ * @param instr the input stream
+ * @param outstr the output stream
+ * @param  ssiHandler and instance of SsiHandler  @see sss-handler.sjs
  */
 Parser = function(name, instr, outstr, ssiHandler) {
 	var self = this;

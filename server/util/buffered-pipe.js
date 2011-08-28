@@ -3,8 +3,8 @@ var EventEmitter = require("events").EventEmitter;
 
 var callback = require("./node-closure").callback;
 /**
- * Constructor, for a pipe that accepts data in and emmits it back out.
- * Pretty basic code uses only strings an += operator for the buffer and when paused will infinitly grow.
+ * Constructor, for a pipe that accepts data in and emits it back out.
+ * Uses only strings and += operator for the buffer and when paused will infinitly grow.
  */
 function BufferedPipe(limit) {
 	this.emitter = new EventEmitter();
@@ -70,7 +70,7 @@ BufferedPipe.prototype.end = function () {
 
 BufferedPipe.prototype.setEncoding = function(utf8) {
 	if ('utf8' != utf8) {
-		throw "Only Strings are supported";
+		throw new Error("Only Strings are supported");
 	}
 };
 

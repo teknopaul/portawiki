@@ -218,12 +218,12 @@ pw.getPageTitle = function(fileName) {
 pw.getPageName = function() {
 	var path = document.location.pathname;
 	if (path.length == 0 || path.length == 1) {
-		throw "Missing path";
+		throw new Error("Missing path");
 	}
 	// TODO host a context
 	var start = path.indexOf("/view/");
 	if (start < 0) {
-		throw "Missing context"; 
+		throw new Error("Missing context"); 
 	}
 	var pageName = path.substring("/view/".length + start);
 	return pageName;

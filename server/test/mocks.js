@@ -15,8 +15,12 @@ request = function(data, url) {
 };
 
 response = function() {
+	this.streamed = '';
 	this.setHeader = function(){};
-	this.write = function(data){
+	this.write = function(data) {
+		if (typeof data == 'string') {
+			this.streamed += data;
+		}
 		console.log(data);
 	};
 	this.writeHead = function(code){

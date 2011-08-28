@@ -11,7 +11,7 @@
 */
     
 /**
- * Constructor
+ * @constructor
  */
 function BufferedStream (stream, limit) {
 	this.stream = stream;

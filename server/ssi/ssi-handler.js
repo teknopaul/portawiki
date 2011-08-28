@@ -9,7 +9,8 @@ var resolve = require('../persistence/file-resolve');
 /**
  * SSI handler to include files and variables and perform some SSI operations,
  *  but not all Apache SSI operations are supported.
- * @param a map of strings for SSI environment
+ *  
+ * @param ssiEnv a map of strings for SSI environment
  * @param resolver an object that exposes 2 methods 
  * 	resolve(pathname, boolean, callback)
  *  resolveApp(pathname, boolean, callback)  
@@ -25,7 +26,7 @@ SsiHandler = function(ssiEnv, resolver) {
 	if (typeof ssiEnv == 'undefined') this.ssiEnv = ssiEnvironment.env;
 
 	/**
-	 * Write the value of an environment variable no need to pause processing.
+	 * Write the value of an environment variable, no need to pause processing.
 	 */
 	this.ssiEcho = function(attributes, parser, outstream) {
 		try {
@@ -116,6 +117,7 @@ SsiHandler = function(ssiEnv, resolver) {
 	
 	/**
 	 * Return the attributes from a SSI statement.
+	 * @param attributes a string in the form name="value" name2="value"
 	 */
 	this._processAttributes = function(attributes) {
 		var atts = {};
@@ -130,7 +132,7 @@ SsiHandler = function(ssiEnv, resolver) {
 				inName = false;
 				while (attributes.charAt(++i) == ' '); // skip whitespace and first "
 				if (attributes.charAt(i) != '"') {
-					throw "Syntax error parsing " + attributes ;
+					throw new Error("Syntax error parsing " + attributes) ;
 				}
 				else {
 					inValue = true;
@@ -160,12 +162,13 @@ SsiHandler = function(ssiEnv, resolver) {
 	
 	/**
 	 * Parse the <!--#type name="value" name2="value" -->  syntax
+	 * @return the attributes of the statement as an object
 	 */
 	this._processStatement = function(ssiStatement) {
 		var typeStart = "<!--#".length;
-		var typeEnd = ssiStatement.indexOf(' '); // <!--#echo var="foo"/>  the first space is required <|--#echo/> will generate an error
+		var typeEnd = ssiStatement.indexOf(' '); // <!--#echo var="foo"/>  the first space is required <!--#echo/> will generate an error
 		if (typeEnd < 0) {
-			console.log("Invlaid SSI statement missing space " + ssiStatement);
+			console.log("Invalid SSI statement missing space " + ssiStatement);
 			return { type : "error", attributes : {}};
 		}
 		return {

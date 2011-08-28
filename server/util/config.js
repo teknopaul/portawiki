@@ -77,9 +77,12 @@ parser.onend = function () {
 
 fs.readFile('../conf/config.xml', function (err, data) {
 	if (err) {
-		throw err;
+		console.error("Can not load config file @ ../conf/config.xml");
+		//throw err; not convenient for nodeunit tests
 	}
-	parser.write(data.toString('utf8')).close();
+	else {
+		parser.write(data.toString('utf8')).close();
+	}
 });
 
 
