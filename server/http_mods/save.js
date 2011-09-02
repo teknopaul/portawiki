@@ -47,7 +47,7 @@ function doPost(request, response, url) {
 					console.error("Error saving page : "+  url.query.pageName + " " + err);
 					response.writeHead(400, "BAD REQUEST");
 					response.end();
-					return
+					return;
 				}
 				
 				meta = new metaData.MetaData();

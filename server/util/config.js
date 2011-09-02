@@ -1,5 +1,5 @@
 /**
- * Configraution object loaded from XML, XML support comments config files should have comments, JSON never thought of that.
+ * Configuration object loaded from XML, XML support comments config files should have comments, JSON never thought of that.
  * 
  * file loaded is ../conf/config.xml
  * 
@@ -79,6 +79,12 @@ fs.readFile('../conf/config.xml', function (err, data) {
 	if (err) {
 		console.error("Can not load config file @ ../conf/config.xml");
 		//throw err; not convenient for nodeunit tests
+		// instead try ../../ which will probably work
+		fs.readFile('../../conf/config.xml', function (err, data) {
+			if ( !err) {
+				parser.write(data.toString('utf8')).close();
+			}
+		});
 	}
 	else {
 		parser.write(data.toString('utf8')).close();
