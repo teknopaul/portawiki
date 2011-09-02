@@ -32,6 +32,8 @@ var pageNameValidator = require('../../client/app/js/page-name-validator');
  * }
  * 
  * if the template contains just {freeform:true} templating is disabled, and any JSON is permitted.
+ * 
+ * TODO drop this, does not comply with the "porta" in portawiki, just boot nodetoy
  */
 
 

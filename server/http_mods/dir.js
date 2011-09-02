@@ -36,7 +36,7 @@ function doGet(request, response, url) {
 		}
 		
 		if (url.search == '?view=toc') {
-			directoryListing(pageName, title, response);
+			directoryListing(pageName, title, request, response);
 			return;
 		}
 		
@@ -48,7 +48,7 @@ function doGet(request, response, url) {
 					return;
 				}
 				else {
-					directoryListing(pageName, title, response);
+					directoryListing(pageName, title, request, response);
 				}
 			});
 			
@@ -62,14 +62,24 @@ function doGet(request, response, url) {
 	}
 };
 
-directoryListing = function(pageName, title, response) {
+directoryListing = function(pageName, title, request, response) {
 	
 	// create a directory listing
 	var tc = new toc.ToC(pageName);
 	
 	tc.getHtml( function(tocHtml) {
 		
+		// TODO test this
+		//if (request.connection.destroyed) return;
+		
 		var instream  = fs.createReadStream('./resources/template-dir.html', { flags: 'r', encoding: 'utf8', start: 0 });
+		
+		// TODO test this
+		//request.on('close', function() {
+		//	reader.destroy();
+		//});
+
+		
 		var inoutpipe = new pipe.BufferedPipe();
 		var env = {
 			title : title.replace(/_/g, ' '), 

@@ -24,6 +24,9 @@ function doGet(request, response, url) {
 		response.statusCode = 200;
 		var mime = defaults.mimeMagic(response, url.pathname);
 
+		// TODO test this
+		//if (request.connection.destroyed) return;
+
 		// open the file
 		var instream = null;
 		if ( defaults.mimeMagicIsText(url.pathname) ) {
@@ -40,6 +43,10 @@ function doGet(request, response, url) {
 			return;
 		});
 
+		// TODO apparently this prevents FD leaks
+		//request.on('close', function() {
+		//	instream.destroy();
+		//});
 	
 		// If it is HTML parse SSI 
 		if (mime == "text/html") {
