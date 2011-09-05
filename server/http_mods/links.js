@@ -4,9 +4,8 @@ var config = require("../util/config.js").configData;
 
 
 /**
- * TODO A module for maintaining an includable .html ssi page with a list of external links.
+ * A module for maintaining an includable .html ssi page with a list of external links.
  * Not meant to be scalable, this just works with a single file for the main menu.
- * 
  */
 
 /**
@@ -18,7 +17,6 @@ LinkModel = function(url, title, description, icon) {
 	this.title = title; // unescaped text
 	this.description = description;  // unescaped text
 	this.icon = icon; // URL escaped
-	this.renderer = this; // plugin some other object that implements toHref() 
 };
 /**
  * Convert one model to an XHMTL snippet (not a doc, no wrapping element).
@@ -37,7 +35,7 @@ LinkModel.prototype.toXHTML = function(model) {
 	if (m.title) {
 		href += domjs.escape(m.title);
 	}
-	href += '</a>';
+	href += '</a><br/>';
 	return href;
 };
 
@@ -58,6 +56,9 @@ LinkModel.unmarshall = function(xmlString, cb) {
 			if (typeof dom.children[i].text == 'string') {
 				continue;
 			}
+			if (dom.children[i].name == 'br') {
+				continue;
+			}
 			var linkElem = dom.children[i];
 			
 			var linkModel = new LinkModel();
@@ -73,7 +74,7 @@ LinkModel.unmarshall = function(xmlString, cb) {
 			}
 			else {
 				if ( ! linkElem.children[0].text ) {
-					console.log('missing data in the XHTML');
+					console.log('Missing data in the XHTML');
 					continue;
 				}
 				linkModel.title = linkElem.children[0].text; 
@@ -92,7 +93,8 @@ LinkModel.marshall = function(all) {
 	var sb = '<div id="pw-links">\n';
 	for ( var i = 0; i < all.length; i++) {
 		if ( all[i] != null) {
-			sb += all[i].toXHTML();
+			var obj = all[i];
+			sb += obj.toXHTML();
 			sb += '\n';
 		}
 	}
@@ -169,36 +171,35 @@ function doGet(request, response, url) {
 
 function doPost(request, response, url) {
 	
-	var linksFile = config.appjsdir + "/main-links.html";
+	var buffer = '';
+	// load from POST request
+	request.on('data', function(data) {
+		buffer += data;
+	});
 	
-	materialize(linksFile, function(err, existingData) {
+	// when all loaded
+	request.on('end', function() {
 		
-		if ( err.errno == 2) { // file not found
-			console.log(linksFile + ' not found');
-			existingData = [];
-		}
-		else if (err) {
-			console.log("Error loading data : " +  url + " " + err);
-			response.writeHead(400, "BAD REQUEST");
-			response.end();
-			return;
-		}
-		
-		var buffer = '';
-		var togo = null;
-		if (url.query && url.query.del) {
-			togo = url.query.del;
-		}
-		else {
-			// load from POST request
-			request.on('data', function(data) {
-				buffer += data;
-			});
-		}
-		
-		// when all loaded
-		request.on('end', function(){
+		// load the existing links
+		var linksFile = config.appjsdir + "/main-links.html";
+		materialize(linksFile, function(err, existingData) {
 			
+			if ( err.errno == 2) { // file not found
+				console.log(linksFile + ' not found');
+				existingData = [];
+			}
+			else if (err) {
+				console.log("Error loading data : " +  url + " " + err);
+				response.writeHead(400, "BAD REQUEST");
+				response.end();
+				return;
+			}
+			
+			var togo = null;
+			if (url.query && url.query.del) {
+				togo = url.query.del;
+			}
+
 			try {
 				if (togo != null) { // deleting
 					for ( var i = 0; i < existingData.length; i++) {
@@ -216,7 +217,7 @@ function doPost(request, response, url) {
 						response.end();
 						return;
 					}
-
+					
 					// sync can throw
 					var json = JSON.parse(buffer);
 					
@@ -228,10 +229,10 @@ function doPost(request, response, url) {
 						throw new Error('url should start "http"');
 					}
 					if (typeof json.title == 'undefined' &&
-						typeof json.icon == 'undefined'	) {
+							typeof json.icon == 'undefined'	) {
 						throw new Error('need and icon or a title');
 					}
-
+					
 					// create and add a model
 					var model = factory(json);
 					existingData.push(model);
@@ -255,8 +256,9 @@ function doPost(request, response, url) {
 				response.end();
 				return;
 			}
-		});
 
+		});
+		
 	});
 	
 };

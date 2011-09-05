@@ -417,6 +417,7 @@ div#pw-content samp {
 	font-weight: bold;
 	padding-bottom: 5px;
 	margin-bottom: 5px;
+	 margin-right: 155px;
 	text-shadow: 2px 2px 2px #ddd;
 	border-bottom: 1px dotted #eee;
 }
@@ -424,3 +425,58 @@ div#pw-content samp {
 	float: right;
 	margin: 10px;
 }
+
+/* Links Editor - start */
+#pw-links-editor-form {
+	margin: 10px 0px 10px 0px;
+	padding: 10px;
+	border: 1px solid silver;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-khtml-border-radius: 8px;
+}
+#pw-add-link-text {
+	font-weight : bold;
+	text-shadow: 2px 2px 2px #ddd;
+	margin-bottom: 5px;
+}
+#pw-links-editor-form label{
+	float : left;
+	width: 100px;
+}
+#pw-links-editor-form br{
+	clear: both;
+}
+.pw-link-desc {
+	border-bottom: 1px dotted #EEEEEE;
+}
+a.pw-link-delete {
+	float:right;	
+}
+#pw-links {
+	position:absolute;
+	top:16px;
+	right:16px;
+	width:115px;
+	padding: 10px;
+	
+	/*background-color: #f9f9ff;*/
+	background: url("img/background.png") repeat-x scroll 0 0 #eaeaea;
+	text-shadow: 1px 1px 0px #FFF;
+	
+	box-shadow: 1px 1px 3px #333;
+	-moz-box-shadow: 1px 1px 3px #333;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	-khtml-box-shadow: 1px 1px 3px #333;
+	
+	border-radius: 8px 0px 8px 0px;
+	-moz-border-radius: 8px 0px 8px 0px;
+	-webkit-border-radius: 8px 0px 8px 0px;
+	-khtml-border-radius: 8px 0px 8px 0px;
+	
+	font-size:9pt;
+	margin-bottom:5px;
+}
+
+/* Links Editor - end */

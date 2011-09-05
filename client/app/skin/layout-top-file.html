@@ -54,12 +54,15 @@
 					Login</a></li>
 			</ul>
 		</div>
+		<!--#include virtual="/app/main-links.html" -->
 		<script>
 			jQuery(pw.bindMenu);
 			jQuery(pw.bindLogin);
 		</script>
 		<div id="main">
 		<script>
-			document.write(pw.breadcrumbTrailHtml(document.location.pathname));
+			if (pw && pw.breadcrumbTrailHtml) {
+				document.write(pw.breadcrumbTrailHtml(document.location.pathname));
+			}
 		</script>
 		
