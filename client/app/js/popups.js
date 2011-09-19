@@ -122,7 +122,7 @@ pw.Popup.prototype.login = function(title, text, callback) {
 		if(text){
 			sb.html('<div>').text(text).html('</div>');
 		}
-		sb.html('<form id="pw-popup-form">')
+		sb.html('<form id="pw-popup-form" name="pw-login-form">')
 		  .html('<label>Username</label><input type="text"     id="pw-popup-username"></input><br/>')
 		  .html('<label>Password</label><input type="password" id="pw-popup-password"></input><br/>')
 		  .html('<span id="pw-popup-buttons">')
@@ -134,6 +134,11 @@ pw.Popup.prototype.login = function(title, text, callback) {
 		jQuery('#pw-popup-form').submit(jQuery.callback(this, this.submit));
 		jQuery('#pw-popup-ok').click(jQuery.callback(this, this.submit));
 		jQuery('#pw-popup-cancel').click(jQuery.callback(this, this.dispose));
+		jQuery('#pw-popup-password').change(jQuery.callback(this, this.submit));
+		jQuery('#pw-popup-username').change(function(){
+			jQuery('#pw-popup-password').focus();
+		});
+		
 		jQuery('#pw-popup-username').focus();
 	} catch(err) {
 		alert(err);
