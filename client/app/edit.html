@@ -6,20 +6,25 @@
 
 <!--#include virtual="/app/inc.html" -->
 
-<script type="text/javascript" src="js/tiny_mce.js"></script>
+<script type="text/javascript" src="js/jquery.tinymce.js"></script>
 <script type="text/javascript">
-tinyMCE.init({
-        // General options
-        theme : "advanced",
-        theme_advanced_toolbar_location : "top",
-        theme_advanced_toolbar_align : "left",
-        theme_advanced_statusbar_location : "bottom",
-        theme_advanced_resizing : true,
-        theme_advanced_blockformats : "p,div,h1,h2,h3,h4,h5,h6,blockquote,dt,dd,samp",
+$(function() {
+	$('textarea.tinymce').tinymce({
+    	// Location of TinyMCE script
+		script_url : 'js/tiny_mce.js',
 
-     	// Usable CSS for the HTML
-        content_css : "/app/skin/public.css",
-		mode : "textareas"
+      // General options
+      theme : "advanced",
+      theme_advanced_toolbar_location : "top",
+      theme_advanced_toolbar_align : "left",
+      theme_advanced_statusbar_location : "bottom",
+      theme_advanced_resizing : true,
+      theme_advanced_blockformats : "p,div,h1,h2,h3,h4,h5,h6,blockquote,dt,dd,samp",
+
+   	// Usable CSS for the HTML
+      content_css : "/app/skin/public.css",
+	  mode : "textareas"
+	});
 });
 
 var editor = new pw.Editor();
@@ -37,7 +42,7 @@ jQuery(function(){
 <h1 id="pw-title">&nbsp;</h1>
 
 <form id="pw-editor-form">
-<textarea class="pw-html-editor" name="content"></textarea><br/>
+<textarea class="pw-html-editor tinymce" name="content"></textarea><br/>
 <input type="submit" value="Save" id="pw-save"></input>
 <input type="submit" value="Save + View" id="pw-save-and-view"></input>
 </form>

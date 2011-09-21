@@ -17,8 +17,6 @@ _resolve = function(pathname, forweb, callback) {
 
 	//console.log("Resolving " + pathname);
 	
-	// get the real file's path avoiding ../ trickery
-	pathname = path.normalize(pathname);
 	if (pathname.indexOf('..') >= 0) {
 		throw {error : "../ trickery"};
 	}
@@ -45,7 +43,6 @@ _resolve = function(pathname, forweb, callback) {
 resolveApp = function(pathname, forweb, callback) {
 
 	// get the real file's path avoiding ../ trickery
-	pathname = path.normalize(pathname);
 	if (pathname.indexOf('..') >= 0) {
 		throw new Error("../ trickery");
 	}

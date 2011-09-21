@@ -1,0 +1,19 @@
+# web infrastructure - manage the status of portawiki
+#
+# This task manage the portawiki server
+
+description "manage the lightweigh node.js portawiki server"
+
+start on (mount-all-net and networking)
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+env PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
+env PORTAWIKIHOME=/home/abdul/portawiki
+env PORTAWIKISERVER=""
+
+script
+       PORTAWIKISERVER=$PORTAWIKIHOME/server
+       cd $PORTAWIKISERVER
+       exec node start
+end script

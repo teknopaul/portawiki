@@ -455,11 +455,10 @@ a.pw-link-delete {
 	float:right;	
 }
 #pw-links {
-	position:absolute;
-	top:16px;
-	right:16px;
+	float: right;
 	width:115px;
 	padding: 10px;
+	margin: 16px;
 	
 	/*background-color: #f9f9ff;*/
 	background: url("img/background.png") repeat-x scroll 0 0 #eaeaea;

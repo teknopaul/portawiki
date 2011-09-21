@@ -1,5 +1,6 @@
 
 var parse = require('url').parse;
+var resolveObject = require('url').resolveObject;
 
 var config = require('../util/config').configData;
 
@@ -31,6 +32,7 @@ route = function(request, response, chain) {
 	try {
 		
 		var url = parse(request.url, true);
+		url = resolveObject(url, url); // strange syntax (url passed twice) but this resolves ../../ paths in the URL
 		
 		if (url.pathname.indexOf('/session/') == 0) {
 			service(sessionModule, request, response, url);
