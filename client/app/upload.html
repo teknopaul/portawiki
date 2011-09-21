@@ -3,10 +3,11 @@
 	<title>Upload</title>
 	<link rel="stylesheet" type="text/css" href="/app/skin/style.css" >
 	<script type="text/javascript" src="/app/js/jquery-1.4.2.js"></script>
-	<script type="text/javascript" src="/app/js/uploader.js"></script>
+	<script type="text/javascript" src="/app/js/jquery.htmlbuffer.js"></script>
 </head>
 <body id="pw-upload-page" style="margin:10px"">
 	<form id="pw-upload-form" method="post" action="/upload/" enctype="multipart/form-data">
+	<div id="pw-upload-text"></div>
 	<input name="dir0" type="hidden"></input>
 	<input name="file0" type="file" id="pw-file-upload-field"></input><br/>
 	<input name="fileName0" type="text"></input> . <input name="fileExt0" type="text" size="4"></input><br/><br/>
@@ -36,6 +37,15 @@
 			var thisform = jQuery('#pw-upload-form')[0]
 			thisform.elements['dir0'].value = basedir;
 		}
+		jQuery(function() {
+			var uploadDir = basedir.charAt(0) != '/' ?
+					'/' + basedir : basedir
+			var html = new jQuery.htmlBuffer();
+			html.html('File will be uploaded to <code>')
+				.text(uploadDir)
+				.html('</code>');
+			jQuery("#pw-upload-text").html(html.toString());			
+		});
 		
 	</script>
 </body>

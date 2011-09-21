@@ -1,0 +1,27 @@
+.TH PORTAWIKI 1 "copyleft teknopaul" PORTAWIKI PORTAWIKI
+.SH NAME
+Portawiki
+.SH SYNOPSIS
+A note pad server saving files as HTML with SSI tags.
+.SH DESCRIPTION
+Portawiki is a Node.js based web server that serves HTML with SSI(Server Side Includes) processed, the HTML is editable in the browser and can be saved back to the server.
+The data is stored directly to the file system there is no database and the file format is normal HTML.  Additioanly styling is added via SSI comments added to the HTML and metadata is stored as hidden HTML elements.
+.PP
+The pages can be rendered in a basic form with no server in any browser, or pretty printed with the portawiki server, Apache or nginx to process the SSI. There is no need to edit the HTML directly but the idea is that is it possible. The HTML generated is saved with standard headers and convenient classes and new lines to make parsing the fils with grep, sed,awk and the like convenient.  Thus pages generated with portawiki can easily be ported to any other system that can render HTML.
+.SH FILES
+conf/config.xml - configuration file , defines document root, also contains a shared secret needed for security tokens, when installing the secret must be something unique.
+.PP
+conf/users.xml - defines username and passwords with edit privilidges.
+.PP
+conf/ssi-envirnment.xml - set env variables for SSI.
+.SH COPYRIGHT
+Copyright (C) 2011 Teknopaul
+Portawiki is a Riereta hacklab project and is free software licenced under GPL.
+.SH AUTHOR
+.nf
+teknopaul@everywhere  
+  i.e. twitter, gmail, yahoo, irc, msn, facebook
+http://riereta.org
+http://code.abnoctus.org
+http://tp23.org
+.fi

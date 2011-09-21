@@ -64,6 +64,9 @@ function doPost(request, response, url) {
 		} catch(err) {
 			console.log(err);
 			// if file name validation fails it was a freaked Stream anyway validate the name in JS before sending
+			response.writeHead(200, {'content-type': 'text/plain'});
+			response.write('Upload failed\n\n');
+			response.end();
 		}
 	});
 
