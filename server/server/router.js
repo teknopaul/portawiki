@@ -19,6 +19,9 @@ var saveModule = 		require('../http_mods/save');
 var sessionModule = 	require('../http_mods/session');
 var uploadModule = 		require('../http_mods/upload');
 
+
+var linksModule = 		require('../http_mods/links');
+
 /**
  * Router routes requests to the correct module.
  * It parses the URI and calls doGet or doPost of the modules.
@@ -68,6 +71,10 @@ route = function(request, response, chain) {
 		else if (url.pathname.indexOf('/upload/') == 0) {
 			service(uploadModule, request, response, url);
 		}
+		else if (url.pathname.indexOf('/links/') == 0) {
+			service(linksModule, request, response, url);
+		}
+		
 		else if (request.method == 'GET') {
 			defaults.fileNotFound(response);
 		}

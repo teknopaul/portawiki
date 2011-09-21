@@ -1,0 +1,39 @@
+<html id="pw-page">
+
+<head>
+
+<title>Links Editor</title>
+<!--#include virtual="/app/inc.html" -->
+<script src="/app/js/links-editor.js"></script>
+
+<script>
+var pw = new pw.LinksEditor();
+jQuery(pw.init());
+</script>
+
+</head>
+
+<body id="pw-body">
+
+<div id="pw-metadata">
+
+<span>
+<div class="pw-created">portawiki<span class="pw-date">Sat Jul 30 2011 03:20:14 GMT+0200 (CEST)</span></div>
+</span>
+
+</div><!--pw-metadata-->
+
+<!--#include virtual="/app/skin/layout-top-empty.html" -->
+
+<div id="pw-title">Links editor</div>
+
+<div id="pw-link-editor">
+	<div id="pw-links-list"></div>
+</div><!--pw-link-editor-->
+
+<!--#include virtual="/app/skin/layout-bottom.html" -->
+
+</body>
+
+</html>
+

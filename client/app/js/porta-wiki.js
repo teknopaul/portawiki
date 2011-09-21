@@ -114,6 +114,12 @@ pw.bindMenu = function() {
 	jQuery("#pw-new-category").click(pw.Menu.newCategory);
 	jQuery("#pw-history").click(pw.Menu.history);
 	jQuery("#pw-upload").click(pw.Menu.upload);
+	// TODO if logged in
+	var linkDiv = jQuery("#pw-links");
+	//if (jQuery("#pw-links a").length > 0) {
+		var editLink = '<a href="/app/links-editor.html" id="pw-edit-link" style="float:right">Δ</a>';
+		linkDiv.prepend(editLink);
+	//}
 };
 
 pw.bindLogin = function() {
