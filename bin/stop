@@ -3,7 +3,7 @@
 # Stop the server
 #
 
-if [ -f /tmp/portawiki.sock ] ; then
+if [ -S /tmp/portawiki.sock ] ; then
 	echo EXIT | nc -U /tmp/portawiki.sock
 	if [ $? -eq 0 ] ; then
 		rm /tmp/portawiki.sock
