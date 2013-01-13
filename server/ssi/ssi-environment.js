@@ -1,6 +1,7 @@
 var util = require("util");
 var events = require('events');
 var fs = require('fs');
+var os = require('os');
 
 var DomJS = require("dom-js").DomJS;
 
@@ -45,6 +46,7 @@ EnvLoader.prototype.init = function() {
 							self.env[name] = value;
 						}
 					}
+					self.env.SERVER_NAME = os.hostname();
 					self.env.initialized = true;
 					self.emit('envReady');
 					console.log("SSI environment");

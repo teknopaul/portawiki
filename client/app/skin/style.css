@@ -358,8 +358,8 @@ div#pw-content samp {
 }
 #pw-popup {
 	position : absolute;
-	top: 50px;
-	left: 50px;
+    top: 50%;
+    left: 25%;
 	z-index : 999;
 	background: #fff;
 	padding : 0px;

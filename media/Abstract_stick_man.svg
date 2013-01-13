@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg6281"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="Abstract_stick_man.svg">
+  <defs
+     id="defs6283">
+    <filter
+       inkscape:collect="always"
+       id="filter7021">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="15.485551"
+         id="feGaussianBlur7023" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter7099"
+       x="-0.19916229"
+       width="1.3983246"
+       y="-0.18647086"
+       height="1.3729417">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="14.111824"
+         id="feGaussianBlur7101" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter7103"
+       x="-0.78251826"
+       width="2.5650365"
+       y="-0.85404782"
+       height="2.7080956">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="14.111824"
+         id="feGaussianBlur7105" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter7107"
+       x="-0.73928243"
+       width="2.4785649"
+       y="-0.66941885"
+       height="2.3388377">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="14.111824"
+         id="feGaussianBlur7109" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter7111">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="14.111824"
+         id="feGaussianBlur7113" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="98.221002"
+     inkscape:cy="341.88518"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1605"
+     inkscape:window-height="980"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata6286">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g7115"
+       transform="translate(260.61936,-422.24376)"
+       inkscape:export-filename="/home/teknopaul/node_workspace/portawiki/media/portawiki.png"
+       inkscape:export-xdpi="31.424021"
+       inkscape:export-ydpi="31.424021">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7059"
+         d="m 150.92304,622.98139 -27.25,31.3125 14.125,44.4375 15.40625,25.25 -2.5,31.3438 -21.5625,37.68741 6.40625,39.375 -24.71875,52.5938 -34.624956,96.5938 29.437456,-3.4688 36.34375,-100.0312 0.78125,-1.4376 19.75,121.2813 -40.9375,151.5313 c -27.225346,37.8938 -53.877056,76.0946 -78.937456,115.4374 l 24.2812,22.0626 81.406256,0 7.28125,-35.3438 -41.625,-1.6875 18.9375,-5.0937 41.71875,-74.5313 20.96875,-90.5313 91.4375,192.0626 10.53125,-16.375 10.21875,31.5 36.84375,0 57.53125,-35.125 -21.03125,-28.9063 -37.28125,7.7187 -136.96875,-240.4374 14.09375,-99.2188 c -0.003,-0.043 0.003,-0.082 0,-0.125 l 7.34375,13.5312 49.71875,59.6876 21.5,-18.5938 -48.375,-62.875 -22.59375,-45.4375 c 0.0184,-0.033 0.0441,-0.061 0.0625,-0.094 l 7.65625,-53.7813 -39.34375,-22.18751 -2.1875,-30.4687 35.96875,13.5625 -11.125,-50.5313 11.125,1.0313 -13.125,-17.1875 -15.15625,-52.5313 -51.53125,-2 z"
+         style="opacity:0.5;fill:#666666;stroke:none;filter:url(#filter7111)" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path7057"
+         d="m 304.20429,952.9502 -17.4375,18.4687 23.4375,32.125 22.375,-25.3125 -28.375,-25.2812 z"
+         style="opacity:0.5;fill:#666666;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter7107)" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path7055"
+         d="m 100.45429,985.0126 -24.249956,3.4376 -19.0313,25.875 22.5,10.3437 20.781256,-39.6563 z"
+         style="opacity:0.5;fill:#666666;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter7103)" />
+      <path
+         sodipodi:nodetypes="scsssssssscssccs"
+         inkscape:connector-curvature="0"
+         id="path6254-8"
+         d="m 85.329017,1005.3829 c -6.84475,-10.3953 -23.58942,-13.234 -38.64082,-1.2778 -9.73467,-11.1168 -18.41233,-21.296 -26.56985,-31.3322 -7.35193,-9.0451 -19.21045216,-12.72 -27.2688922,-5.0371 -17.4096398,16.598 -35.7001898,34.6156 -48.1178698,46.0369 -6.59447,6.0653 -10.39117,19.2609 -4.89891,26.3331 26.74886,34.4436 66.7913798,81.3144 87.963942,99.9704 7.6457,6.7369 17.43596,6.8028 25.31216,0.335 25.19938,-20.6934 33.54344,-27.7165 49.946483,-44.4512 5.48256,-5.5935 5.49794,-17.2816 0.59319,-23.3846 -8.740773,-10.8761 -25.664893,-32.6842 -25.664893,-32.6842 12.03122,-13.7873 12.66915,-26.4231 7.34546,-34.5083 z m -11.91866,8.1618 c 2.42315,4.1258 2.37864,10.8056 -2.55763,18.1384 -4.77842,-6.8395 -8.66521,-10.6654 -14.31993,-17.5664 6.54617,-6.986 13.76208,-5.8766 16.87756,-0.572 z"
+         style="opacity:0.5;fill:#666666;stroke:none;filter:url(#filter7099)" />
+    </g>
+    <path
+       style="fill:#f2f2f2;stroke:#000000;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       d="m 453.87899,345.99432 -2.95867,-41.36549 35.9681,13.5504 -11.11167,-50.50763 11.11167,1.01016 -13.13198,-17.1726 -15.15229,-52.52793 -51.51778,-2.02031 -27.27412,31.31473 14.14215,44.44672 15.39738,25.25381 -3.67294,46.12039 13.06018,2.5018 z"
+       id="path6327"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccc"
+       inkscape:export-filename="/home/teknopaul/node_workspace/portawiki/media/portawiki.png"
+       inkscape:export-xdpi="31.424021"
+       inkscape:export-ydpi="31.424021" />
+    <path
+       style="fill:#000080;stroke:#000000;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 534.1938,538.05952 -49.72049,-59.69166 -68.83279,-125.85347 42.09676,3.79174 49.59011,100.28752 48.35764,62.88064 z"
+       id="path6241"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/teknopaul/node_workspace/portawiki/media/portawiki.png"
+       inkscape:export-xdpi="31.424021"
+       inkscape:export-ydpi="31.424021" />
+    <path
+       style="fill:#000080;stroke:#000000;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       d="m 418.67098,571.8936 -40.94759,151.54409 c -27.22535,37.89393 -53.8755,76.09834 -78.93597,115.44129 l 24.28409,22.06962 81.42387,0 7.25815,-35.36475 -41.61358,-1.66586 18.94952,-5.11013 41.71792,-74.51586 20.94971,-90.54112 91.45655,192.07133 10.5296,-16.37768 10.2185,31.50407 36.82962,0 57.51884,-35.13463 -21.01579,-28.92107 -37.29576,7.74138 -136.96172,-240.44858 29.39913,-206.89543 -76.79555,-43.35769 -30.3337,53.08397 z"
+       id="path6237"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccc"
+       inkscape:export-filename="/home/teknopaul/node_workspace/portawiki/media/portawiki.png"
+       inkscape:export-xdpi="31.424021"
+       inkscape:export-ydpi="31.424021" />
+    <path
+       style="fill:#000080;stroke:#000000;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       d="m 418.89705,348.6049 -51.91979,110.37017 -34.61321,96.57387 29.42122,-3.44905 36.34386,-100.02293 40.59264,-75.67871 5.98675,-27.37475 z"
+       id="path6239"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-filename="/home/teknopaul/node_workspace/portawiki/media/portawiki.png"
+       inkscape:export-xdpi="31.424021"
+       inkscape:export-ydpi="31.424021" />
+    <path
+       style="fill:#f2f2f2;stroke:#000000;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 542.91183,545.39404 17.45062,-18.46078 28.3615,25.30184 -22.3718,25.2881 z"
+       id="path6243"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/teknopaul/node_workspace/portawiki/media/portawiki.png"
+       inkscape:export-xdpi="31.424021"
+       inkscape:export-ydpi="31.424021" />
+    <path
+       style="fill:#aa4400;stroke:#000000;stroke-width:2.41863155px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 337.67501,578.35871 c -6.84475,-10.39532 -23.58942,-13.23402 -38.64082,-1.27781 -9.73467,-11.11674 -18.41233,-21.29594 -26.56985,-31.33216 -7.35193,-9.04508 -19.21045,-12.71997 -27.26889,-5.03716 -17.40964,16.59809 -35.70019,34.61568 -48.11787,46.03695 -6.59447,6.06529 -10.39117,19.26086 -4.89891,26.33306 26.74886,34.44365 66.79138,81.31443 87.96394,99.97043 7.6457,6.73689 17.43596,6.80282 25.31216,0.33496 25.19938,-20.69336 33.54344,-27.71648 49.94648,-44.45117 5.48256,-5.59344 5.49794,-17.2816 0.59319,-23.38456 -8.74077,-10.87613 -25.66489,-32.68423 -25.66489,-32.68423 12.03122,-13.78726 12.66915,-26.42306 7.34546,-34.50831 z m -11.91866,8.16183 c 2.42315,4.12577 2.37864,10.80555 -2.55763,18.13838 -4.77842,-6.83953 -8.66521,-10.6654 -14.31993,-17.56642 6.54617,-6.98596 13.76208,-5.87653 16.87756,-0.57196 z"
+       id="path6254"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="scsssssssscssccs"
+       inkscape:export-filename="/home/teknopaul/node_workspace/portawiki/media/portawiki.png"
+       inkscape:export-xdpi="31.424021"
+       inkscape:export-ydpi="31.424021" />
+    <path
+       style="fill:#f2f2f2;stroke:#000000;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 332.36405,562.44708 24.22924,-3.44906 -20.7679,39.66427 -22.49861,-10.34719 z"
+       id="path6245"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/teknopaul/node_workspace/portawiki/media/portawiki.png"
+       inkscape:export-xdpi="31.424021"
+       inkscape:export-ydpi="31.424021" />
+  </g>
+</svg>
