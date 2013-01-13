@@ -349,6 +349,9 @@ div#pw-history-title {
 div#content table {
 	width: 100%;
 }
+div#content table.mceToolbar {
+	width: 0%;
+}
 div#pw-content samp {
 	font-family : monospace;
 	padding : 5px;

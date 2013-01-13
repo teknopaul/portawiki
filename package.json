@@ -1,6 +1,6 @@
 {
   "name": "portawiki",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description" : "A textpad that saves data as HTML with SSI includes",
   "dependencies": {
   	"sax" :			">=0.1.5",
