@@ -28,7 +28,6 @@
 <div class="pw-edited">bob<span class="pw-date">Sat Jul 12 2014 19:12:20 GMT+0200 (CEST)</span></div>
 <div class="pw-edited">bob<span class="pw-date">Sat Jul 12 2014 19:12:21 GMT+0200 (CEST)</span></div>
 <div class="pw-edited">bob<span class="pw-date">Sat Jul 12 2014 19:12:59 GMT+0200 (CEST)</span></div>
-<div class="pw-edited">bob<span class="pw-date">Sat Jul 12 2014 19:13:12 GMT+0200 (CEST)</span></div>
 </span>
 
 
@@ -41,9 +40,7 @@
 <div id="pw-content">
 <h2>It Works! [sic]</h2>
 <p>&lt;&lt; foo &gt;&gt; &nbsp;said jordi</p>
-<p>&nbsp;</p>
 <p><a href="Section/index.html">Section</a></p>
-<p>&nbsp;</p>
 <p>"pah!" &nbsp;said Brian</p>
 <p>'dawg gawn' &nbsp;said huckleberry&nbsp;</p>
 </div><!--pw-content-->
